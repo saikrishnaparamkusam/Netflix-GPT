@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { auth } from "../utils/firebase";
 import { addUser, removeUser } from "../utils/userSlice";
 import { LOGO, SUPPORTED_LANGUAGES } from "../utils/constants";
-import { toggleGptSearchView } from "../utils/gptSlice";
+import { addGptMovieResult, toggleGptSearchView } from "../utils/gptSlice";
 import { changeLanguage } from "../utils/configSlice";
 
 const Header = () => {
@@ -42,6 +42,7 @@ const Header = () => {
     //Toggle Search Bar
     dispatch(toggleGptSearchView());
     dispatch(changeLanguage("en"));
+    dispatch(addGptMovieResult({ movieResults: null, movieNames: null }));
   };
   const handleLanguageChange = (e) => {
     dispatch(changeLanguage(e.target.value));
@@ -54,7 +55,7 @@ const Header = () => {
         <div className="flex p-2">
           {showGptSearch && (
             <select
-              className="p-2 m-2 bg-gray-900 text-white"
+              className="py-2 px-3 m-2 bg-gray-900 text-white rounded-lg outline-none"
               onChange={handleLanguageChange}>
               {SUPPORTED_LANGUAGES.map((lang) => (
                 <option
