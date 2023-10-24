@@ -13,7 +13,7 @@ const GptSearch = () => {
           alt="logo"
         />
       </div>
-      <div className="pt-[30%] md:pt-0">
+      <div className="pt-[30%] lg:pt-0">
         <GptSearchBar />
         <GptMovieSuggestions />
       </div>
