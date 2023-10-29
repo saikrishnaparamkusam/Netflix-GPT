@@ -24,4 +24,4 @@ export const SUPPORTED_LANGUAGES = [
   { identifier: "malayalam", name: "malayalam" },
 ];
 
-export const OPENAI_KEY = "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"; //process.env.REACT_APP_OPENAI_KEY;
+export const OPENAI_KEY = "sk"; //process.env.REACT_APP_OPENAI_KEY;
